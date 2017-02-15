@@ -57,11 +57,10 @@ def boost_library(name, defines=None, includes=None, hdrs=None, srcs=None, deps=
   )
 
 def boost_deps():
-  native.new_http_archive(
+  native.new_git_repository(
     name = "boost",
-    url = "https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.bz2/download",
-    build_file = "@com_github_nelhage_boost//:BUILD.boost",
-    type = "tar.bz2",
-    strip_prefix = "boost_1_63_0/",
-    sha256 = "beae2529f759f6b3bf3f4969a19c2e9d6f0c503edcb2de4a61d1428519fcb3b0",
+    remote = "https://github.com/boostorg/boost.git",
+    build_file = "@com_github_fd_boost//:BUILD.boost",
+    init_submodules = 1,
+    tag = "boost-1.63.0",
   )
