@@ -1,4 +1,4 @@
-load("@com_github_nelhage_boost//:boost/boost.bzl", "boost_library")
+load("@com_github_fd_boost//:boost/boost.bzl", "boost_library")
 
 boost_library(
   name = "algorithm",
@@ -448,6 +448,57 @@ boost_library(
 
 boost_library(
   name = "tuple",
+)
+
+boost_library(
+  name = "thread",
+  deps = [
+    ":system",
+    ":date_time",
+    ":chrono",
+  ]
+)
+
+boost_library(
+  name = "date_time",
+)
+
+boost_library(
+  name = "chrono",
+  deps = [
+    ":config",
+    ":exception",
+    ":integer",
+    ":mpl",
+    ":operators",
+    ":ratio",
+    ":system",
+    ":type_traits",
+    ":utility",
+  ]
+)
+
+boost_library(
+  name = "ratio",
+  deps = [
+    ":config",
+    ":integer",
+    ":mpl",
+    ":static_assert",
+    ":type_traits",
+    ":utility",
+  ]
+)
+
+boost_library(
+  name = "asio",
+  deps = [
+    ":system",
+    ":regex",
+    ":thread",
+    ":date_time",
+    ":serialization",
+  ]
 )
 
 boost_library(

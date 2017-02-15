@@ -1,1 +1,1 @@
-workspace(name = "com_github_nelhage_boost")
+workspace(name = "com_github_fd_boost")
